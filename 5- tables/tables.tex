@@ -1,0 +1,67 @@
+\documentclass{article} 
+
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage[table]{xcolor}
+
+\begin{document}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+	\hline 
+	\multicolumn{3}{|c|}{Multiple Column} \\
+	\hline 
+	A &  B & C \\
+	\hline 
+	\multirow{3}{*}{Multiple row} & Cell 1 & Cell 2 \\
+	& Cell 3 & Cell 4 \\
+	& Cell 5 & Cell 6 \\
+	& Cell 7 & Cell 8 \\
+	\hline
+ \end{tabular}
+\caption{Using multirow and multicolumn}
+\end{table}
+
+\clearpage
+
+\begin{table}
+\centering
+\begin{tabularx}{0.9\textwidth} { 
+		| >{\raggedright\arraybackslash}X 
+		| >{\centering\arraybackslash}X 
+		| >{\raggedleft\arraybackslash}X | }
+	\hline
+	A &  B &  C \\
+	\hline 
+	\lipsum[1][1] & Cell 2 & Cell 3 \\
+	\hline
+	Cell 4  & \lipsum[1][1]  & Cell 6  \\
+	\hline
+	Cell 7  & Cell 8  & \lipsum[1][1]  \\
+	\hline
+\end{tabularx}
+\caption{A table with different alignments}
+\end{table}
+
+\clearpage
+
+\newcolumntype{s}{>{\columncolor[HTML]{304FFE}} >{\raggedright\arraybackslash}X }
+\arrayrulecolor[HTML]{00C853}
+\begin{table}
+  \begin{tabularx}{0.9\textwidth} { 
+    | s
+    | >{\raggedright\arraybackslash}X 
+    | >{\raggedright\arraybackslash}X | }
+  \hline
+  \rowcolor{lightgray} A &  B &  C \\ \hline 
+  \lipsum[1][1] & \lipsum[1][1] & \lipsum[1][1] \\ \hline
+  \lipsum[1][1] & \lipsum[1][1] & \lipsum[1][1] \\ \hline
+  \lipsum[1][1] & \lipsum[1][1] & \cellcolor[HTML]{F57C00} \lipsum[1][1] \\
+  \hline
+  \end{tabularx}
+\caption{A colorized table}
+\end{table}
+
+\end{document}
